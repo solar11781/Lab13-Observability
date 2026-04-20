@@ -36,10 +36,11 @@
 ### 3.2 Dashboard & SLOs
 
 - [DASHBOARD_6_PANELS_SCREENSHOT]:
-  screenshots/dashboard_1.png
-  screenshots/dashboard_2.png
-  screenshots/dashboard_3.png
-  screenshots/dashboard_4.png
+![1](/screenshots/dashboard_1.png)
+![2](/screenshots/dashboard_2.png)
+![3](/screenshots/dashboard_3.png)
+![4](/screenshots/dashboard_4.png)
+
 - [SLO_TABLE]:
   | SLI | Target | Window | Current Value |
   |---|---:|---|---:|
