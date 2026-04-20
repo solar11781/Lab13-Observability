@@ -7,3 +7,11 @@ data/audit.jsonl
 .env
 .pytest_cache/
 .antigravity/
+'# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+bin/
+lib/
+include/
