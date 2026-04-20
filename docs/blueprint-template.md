@@ -113,8 +113,7 @@
   - Alert được thiết kế trực tiếp dựa trên các SLI trong SLO
   - Hệ thống có khả năng phát hiện và cảnh báo khi vi phạm SLO
 - [EVIDENCE_LINK]:
-- https://github.com/solar11781/lab13_C401_F1/blob/main/config/alert_rules.yaml
-- https://github.com/solar11781/lab13_C401_F1/blob/main/config/slo.yaml
+- https://github.com/solar11781/lab13_C401_F1/commit/dbead3d5a646a61044eff87638bcb42560b7ca70
 
 ### Bùi Trần Gia Bảo
 
