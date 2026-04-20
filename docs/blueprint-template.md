@@ -3,19 +3,20 @@
 > **Instruction**: Fill in all sections below. This report is designed to be parsed by an automated grading assistant. Ensure all tags (e.g., `[GROUP_NAME]`) are preserved.
 
 ## 1. Team Metadata
-- [GROUP_NAME]: 
-- [REPO_URL]: 
-- [MEMBERS]:
-  - Member A: [Name] | Role: Logging & PII
-  - Member B: [Name] | Role: Tracing & Enrichment
-  - Member C: [Name] | Role: SLO & Alerts
-  - Member D: [Name] | Role: Load Test & Dashboard
-  - Member E: [Name] | Role: Demo & Report
+- GROUP_NAME: C401-F1
+- REPO_URL: https://github.com/solar11781/Lab13-Observability
+- MEMBERS:
+  - Member A: Lê Duy Anh | Role: Logging & PII
+  - Member B: Trương Minh Sơn | Role: Tracing & Enrichment
+  - Member C: Nguyễn Phạm Trà My | Role: SLO & Alerts
+  - Member D: Bùi Trần Gia Bảo | Role: Load Test & Incident Injection
+  - Member E: Mạc Phương Nga | Role: Dashboard & Evidence
+  - Member F: Lại Gia Khánh | Role: Report & Demo
 
 ---
 
 ## 2. Group Performance (Auto-Verified)
-- [VALIDATE_LOGS_FINAL_SCORE]: /100
+- VALIDATE_LOGS_FINAL_SCORE: /100
 - [TOTAL_TRACES_COUNT]: 
 - [PII_LEAKS_FOUND]: 
 
@@ -55,23 +56,27 @@
 
 ## 5. Individual Contributions & Evidence
 
-### [MEMBER_A_NAME]
+### Lê Duy Anh
 - [TASKS_COMPLETED]: 
 - [EVIDENCE_LINK]: (Link to specific commit or PR)
 
-### [MEMBER_B_NAME]
+### Trương Minh Sơn
 - [TASKS_COMPLETED]: 
 - [EVIDENCE_LINK]: 
 
-### [MEMBER_C_NAME]
+### Nguyễn Phạm Trà My
 - [TASKS_COMPLETED]: 
 - [EVIDENCE_LINK]: 
 
-### [MEMBER_D_NAME]
+### Bùi Trần Gia Bảo
 - [TASKS_COMPLETED]: 
 - [EVIDENCE_LINK]: 
 
-### [MEMBER_E_NAME]
+### Mạc Phương Nga
+- [TASKS_COMPLETED]: 
+- [EVIDENCE_LINK]: 
+
+### Lại Gia Khánh
 - [TASKS_COMPLETED]: 
 - [EVIDENCE_LINK]: 
 
