@@ -10,7 +10,7 @@
 {"question": "What happens if my balance drops below the minimum?", "must_include": ["minimum balance", "fee"]}
 {"question": "Do you charge a monthly maintenance fee?", "must_include": ["maintenance fee", "account"]}
 {"question": "How do I update my mailing address on my account?", "must_include": ["update", "address"]}
-{"question": "How do I update my phone number for banking notifications?", "must_include": ["update", "phone number"]}
+{"question": "How do I update my phone numbers for banking notifications?", "must_include": ["update", "phone number"]}
 {"question": "How do I update my email address in online banking?", "must_include": ["update", "email"]}
 {"question": "Can I link multiple accounts in one profile?", "must_include": ["link", "multiple accounts"]}
 {"question": "How do I rename my account nickname in the app?", "must_include": ["nickname", "app"]}
@@ -40,7 +40,7 @@
 {"question": "Can I get a stamped bank statement from a branch?", "must_include": ["bank statement", "branch"]}
 {"question": "How do I transfer money to another bank?", "must_include": ["transfer", "recipient"]}
 {"question": "How do I transfer money between my own accounts?", "must_include": ["transfer", "own accounts"]}
-{"question": "What is the daily transfer limit?", "must_include": ["daily transfer limit", "security"]}
+{"question": "What is the daily transference limit?", "must_include": ["daily transfer limit", "security"]}
 {"question": "Can I increase my transfer limit?", "must_include": ["increase", "transfer limit"]}
 {"question": "How much is the fee for interbank transfer?", "must_include": ["fee", "interbank transfer"]}
 {"question": "How long does an interbank transfer take?", "must_include": ["interbank transfer", "processing time"]}

@@ -10,11 +10,11 @@
 {"user_id": "u010", "session_id": "s010", "feature": "qa", "message": "What happens if my balance drops below the minimum?"}
 {"user_id": "u011", "session_id": "s011", "feature": "qa", "message": "Do you charge a monthly maintenance fee?"}
 {"user_id": "u012", "session_id": "s012", "feature": "qa", "message": "How do I update my mailing address on my account?"}
-{"user_id": "u013", "session_id": "s013", "feature": "qa", "message": "How do I update my phone number for banking notifications?"}
-{"user_id": "u014", "session_id": "s014", "feature": "qa", "message": "How do I update my email address in online banking?"}
+{"user_id": "u013", "session_id": "s013", "feature": "qa", "message": "How do I update my phone numbers for banking notifications?"}
+{"user_id": "u014", "session_id": "s014", "feature": "qa", "message": "How do I update my email addresses in online banking?"}
 {"user_id": "u015", "session_id": "s015", "feature": "qa", "message": "Can I link multiple accounts in one profile?"}
 {"user_id": "u016", "session_id": "s016", "feature": "qa", "message": "How do I rename my account nickname in the app?"}
-{"user_id": "u017", "session_id": "s017", "feature": "qa", "message": "What is my customer ID and where can I find it?"}
+{"user_id": "u017", "session_id": "s017", "feature": "qa", "message": "What is my customer IDs and where can I find it?"}
 {"user_id": "u018", "session_id": "s018", "feature": "qa", "message": "What is branch code BNK-HCM-01 used for?"}
 {"user_id": "u019", "session_id": "s019", "feature": "qa", "message": "Can I open a joint account?"}
 {"user_id": "u020", "session_id": "s020", "feature": "qa", "message": "Can I open an account online if I am a new customer?"}
