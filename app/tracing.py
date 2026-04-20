@@ -1,39 +1,63 @@
 from __future__ import annotations
 
 import os
-from typing import Any
+from typing import Any, Optional
+from dotenv import load_dotenv
+
+# Nạp các biến môi trường từ file .env ngay khi module được load
+load_dotenv()
+
+def tracing_enabled() -> bool:
+    """Kiểm tra xem các API Keys cần thiết đã được thiết lập chưa."""
+    return bool(os.getenv("LANGFUSE_PUBLIC_KEY") and os.getenv("LANGFUSE_SECRET_KEY"))
 
 try:
+    # Thử nạp thư viện Langfuse chính thức
     from langfuse.decorators import observe, langfuse_context
-except Exception:  # pragma: no cover
+    from langfuse import Langfuse
+    
+    # Chỉ khởi tạo client chính nếu Keys tồn tại
+    if tracing_enabled():
+        langfuse = Langfuse()
+    else:
+        langfuse = None
+        
+except ImportError:  # pragma: no cover
+    # Cơ chế dự phòng (Fallback) nếu môi trường chưa cài đặt thư viện hoặc lỗi import
     def observe(*args: Any, **kwargs: Any):
         def decorator(func):
             return func
         return decorator
-# Dummy context to avoid import errors when Langfuse keys are not set. This allows the app to run without tracing if the environment variables are missing.
+
     class _DummySpan:
-        def __enter__(self):
-            return self
+        def __enter__(self): return self
+        def __exit__(self, exc_type, exc, tb): return False
+        def update(self, **kwargs): pass
+        def end(self, **kwargs): pass
 
-        def __exit__(self, exc_type, exc, tb):
-            return False
-
-        def update(self, **kwargs):
-            return None
-
-# Dummy context to avoid import errors when Langfuse keys are not set. This allows the app to run without tracing if the environment variables are missing.
     class _DummyContext:
-        def update_current_trace(self, **kwargs: Any) -> None:
-            return None
-
-        def update_current_observation(self, **kwargs: Any) -> None:
-            return None
-
-        def span(self, name: str = ""):
-            return _DummySpan()
+        def update_current_trace(self, **kwargs: Any) -> None: pass
+        def update_current_observation(self, **kwargs: Any) -> None: pass
+        def span(self, name: str = ""): return _DummySpan()
+        def score(self, **kwargs: Any) -> None: pass
 
     langfuse_context = _DummyContext()
+    langfuse = None
 
-#span name can be used to group related operations together in the tracing system. For example, you might use span names like "llm_generation", "vector_retrieval", or "api_request" to categorize different types of operations in your application. This helps in visualizing and analyzing the traces more effectively in the Langfuse dashboard.
-def tracing_enabled() -> bool:
-    return bool(os.getenv("LANGFUSE_PUBLIC_KEY") and os.getenv("LANGFUSE_SECRET_KEY"))
+def score_trace(name: str, value: float, comment: Optional[str] = None) -> None:
+    """
+    Gửi điểm số đánh giá chất lượng (quality score) lên Langfuse.
+    Giúp Member B tự động hóa báo cáo Metrics.
+    """
+    if not tracing_enabled():
+        return
+
+    try:
+        langfuse_context.score(
+            name=name,
+            value=value,
+            comment=comment
+        )
+    except Exception:
+        # Không raise lỗi ở đây để tránh làm sập luồng chính của Agent
+        pass
