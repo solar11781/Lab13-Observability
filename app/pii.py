@@ -4,11 +4,26 @@ import hashlib
 import re
 
 PII_PATTERNS: dict[str, str] = {
+    # --- Liên lạc & Mạng ---
     "email": r"[\w\.-]+@[\w\.-]+\.\w+",
-    "phone_vn": r"(?:\+84|0)[ \.-]?\d{3}[ \.-]?\d{3}[ \.-]?\d{3,4}", # Matches 090 123 4567, 090.123.4567, etc.
-    "cccd": r"\b\d{12}\b",
+    "phone_vn": r"(?:\+84|0)[ \.-]?\d{3}[ \.-]?\d{3}[ \.-]?\d{3,4}",
+    "ipv4": r"\b(?:\d{1,3}\.){3}\d{1,3}\b",
+
+    # --- Giấy tờ tùy thân (Việt Nam) ---
+    "cccd": r"\b\d{12}\b",                                 # Căn cước công dân (12 số)
+    "cmnd": r"\b\d{9}\b",                                  # Chứng minh nhân dân cũ (9 số)
+    "passport_vn": r"\b[A-Z]\d{7}\b",                      # Hộ chiếu VN (1 chữ cái in hoa + 7 số)
+    
+    # --- Tài chính & Định danh khác ---
     "credit_card": r"\b\d{4}[- ]?\d{4}[- ]?\d{4}[- ]?\d{4}\b",
-    # TODO: Add more patterns (e.g., Passport, Vietnamese address keywords)
+    "tax_id_vn": r"\b\d{10}(?:-\d{3})?\b",                 # Mã số thuế (10 số, hoặc 10 số - 3 số)
+    "license_plate_vn": r"\b\d{2}[A-ZĐ][A-Z0-9]?[- .]?\d{3,4}(?:\.\d{2})?\b", # Biển số xe (VD: 29A-123.45, 59X1-12345)
+    
+    # --- Thông tin cá nhân cơ bản ---
+    "date_of_birth": r"\b(?:0?[1-9]|[12][0-9]|3[01])[-/\.](?:0?[1-9]|1[012])[-/\.](?:19|20)\d\d\b", # dd/mm/yyyy hoặc dd-mm-yyyy
+    
+    # --- Địa chỉ (Nhận diện theo từ khóa) ---
+    "address_keyword_vn": r"(?i)\b(?:thành phố|tp\.?|quận|q\.?|huyện|h\.?|phường|p\.?|xã|thị xã|tx\.?|đường|ngõ|ngách|thôn|xóm|ấp|khu phố|kp\.?)\b"
 }
 
 
