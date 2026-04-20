@@ -38,11 +38,11 @@
 | Latency P95 | < 2500ms | 28d |  |
 | Error Rate | < 2% | 28d | |
 | Cost Budget | < $3.0/day | 28d | |
-| Average Quality Score | < 0.85 | 28d | |
+| Average Quality Score | > 0.85 | 28d | |
 
 ### 3.3 Alerts & Runbook
-- ALERT_RULES_SCREENSHOT: ![ALERT RULES](/screenshots/alert_rules.png)
-- SAMPLE_RUNBOOK_LINK: [docs/alerts.md#L...]
+- ALERT_RULES_SCREENSHOT: ![ALERT_RULES](/screenshots/alert_rules.png)
+- SAMPLE_RUNBOOK_LINK: https://github.com/solar11781/Lab13-Observability/blob/main/docs/alerts.md
 
 ---
 
@@ -59,28 +59,55 @@
 ## 5. Individual Contributions & Evidence
 
 ### Lê Duy Anh
-- [TASKS_COMPLETED]: 
-- [EVIDENCE_LINK]: (Link to specific commit or PR)
+**TASKS_COMPLETED:**
+- Update PII in the pii.py file and modify the logging code in logging_config.py
+**EVIDENCE_LINK:**
+- https://github.com/solar11781/Lab13-Observability/commit/ccb27c7be72e2b7569d84e1ba676452c0e258d36
+- https://github.com/solar11781/Lab13-Observability/commit/6b1fe1d8ac08fc5a76cec3fecb219a16c526fca7
+- https://github.com/solar11781/Lab13-Observability/commit/5e945280fd0a1783a906a6dd604d6c994abddcd0
+- https://github.com/solar11781/Lab13-Observability/commit/ee4991f97fbed14bffab61f033bf98cc257381e9
 
 ### Trương Minh Sơn
-- [TASKS_COMPLETED]:
-- [EVIDENCE_LINK]: 
+**TASKS_COMPLETED:**
+- Implemented a robust observability pipeline featuring Langfuse tracing, automated PII scrubbing for logs and traces, and a comprehensive banking-specific test suite to monitor AI agent performance and security.
+**EVIDENCE_LINK:**
+- Correlation ID Tracking: [https://github.com/solar11781/Lab13-Observability/blob/main/app/middleware.py](https://github.com/solar11781/Lab13-Observability/blob/main/app/middleware.py)
+- Langfuse Integration: [https://github.com/solar11781/Lab13-Observability/blob/main/app/tracing.py](https://github.com/solar11781/Lab13-Observability/blob/main/app/tracing.py)
+- Structured Logging and PII Scrubbing: [https://github.com/solar11781/Lab13-Observability/blob/main/app/logging_config.py](https://github.com/solar11781/Lab13-Observability/blob/main/app/logging_config.py)
+- Banking Corpus and RAG Knowledge: [https://github.com/solar11781/Lab13-Observability/blob/main/app/mock_rag.py](https://github.com/solar11781/Lab13-Observability/blob/main/app/mock_rag.py)
+- Stress Test Scenarios (200 Queries): [https://github.com/solar11781/Lab13-Observability/blob/main/data/bank_sample_queries_200.jsonl](https://github.com/solar11781/Lab13-Observability/blob/main/data/bank_sample_queries_200.jsonl)
+- Quality Evaluation Ground Truth: [https://github.com/solar11781/Lab13-Observability/blob/main/data/bank_expected_answers_200.jsonl](https://github.com/solar11781/Lab13-Observability/blob/main/data/bank_expected_answers_200.jsonl)
 
 ### Nguyễn Phạm Trà My
 - [TASKS_COMPLETED]: 
 - [EVIDENCE_LINK]: 
 
 ### Bùi Trần Gia Bảo
-- [TASKS_COMPLETED]: 
-- [EVIDENCE_LINK]: 
+**TASKS_COMPLETED:** 
+- Executed and validated all incident scenarios (rag_slow, tool_fail, cost_spike) using load_test.py and inject_incident.py, confirming expected system behaviors (latency increase, error spikes, cost increase).
+- Created domain-specific banking test datasets (200 queries + expected answers) to simulate realistic chatbot usage.
+- Developed adversarial test cases (PII injection, fraud attempts, prompt injection, malformed inputs) to evaluate system robustness and security.
+- Verified system stability under edge cases (no crashes, consistent responses, proper error handling).
+- Collected metrics and validated system performance using /metrics endpoint (latency, cost, tokens, error breakdown).
+
+**EVIDENCE_LINK:**
+- https://github.com/solar11781/Lab13-Observability/commit/d914cc085acb24c40f2216cf371ee11563002e43
+- https://github.com/solar11781/Lab13-Observability/commit/34b13221128d333f103a501b6baf5f03d4d70745
+- https://github.com/solar11781/Lab13-Observability/commit/36c400cb66ea12ca3643839d59597fea49e55e72
+- https://github.com/solar11781/Lab13-Observability/commit/c25b9490ecde945cd375508042769ceeaa40961d
+- https://github.com/solar11781/Lab13-Observability/commit/e4a841aafa02c79b006afa1f358850b41c7d2193
 
 ### Mạc Phương Nga
 - [TASKS_COMPLETED]: 
 - [EVIDENCE_LINK]: 
 
 ### Lại Gia Khánh
-- [TASKS_COMPLETED]: 
-- [EVIDENCE_LINK]: 
+**TASKS_COMPLETED:** 
+- Hoàn thành team report (blueprint-template.md) và chuẩn bị mock-debug-qa.md.
+**EVIDENCE_LINK:**
+- https://github.com/solar11781/Lab13-Observability/commit/aec716cf600567eee892c45fb47a312020554dab
+- https://github.com/solar11781/Lab13-Observability/commit/1c07379e260a0dc7b7011e2731790b999e9f06e3
+- https://github.com/solar11781/Lab13-Observability/commit/4f373854699921d7e22d23eebb002391611bf0c9
 
 ---
 
